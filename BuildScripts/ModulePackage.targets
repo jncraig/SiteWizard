@@ -53,10 +53,6 @@
       <Output TaskParameter="Include" ItemName="PackageManifestFiles" />
     </CreateItem>
 
-    <CreateItem Include="**\License.txt">
-      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
-    </CreateItem>
-
     <CreateItem Include="**\ReleaseNotes.txt">
       <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
     </CreateItem>
@@ -86,9 +82,9 @@
       <Output TaskParameter="Include" ItemName="OutputContent" />
     </CreateItem>
     <!-- Create the Install package -->    
-    <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Install.zip" />
+    <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="SiteWizard_$(Version)_Install.zip" />
     <!-- Copy the Install package to the Packages folder -->
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.zip" DestinationFolder="install/" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\SiteWizard_$(Version)_Install.zip" DestinationFolder="install/" />
     
     <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
     <RemoveDir Directories ="$(MSBuildProjectDirectory)\ResourcesZip" />
@@ -113,8 +109,8 @@
       <Output TaskParameter="Include" ItemName="OutputSource" />
     </CreateItem>
 
-    <Zip Files="@(OutputSource)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Source.zip" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Source.zip" DestinationFolder="install/" />
+    <Zip Files="@(OutputSource)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="SiteWizard_$(Version)_Source.zip" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\SiteWizard_$(Version)_Source.zip" DestinationFolder="install/" />
 
     <Delete Files="$(MSBuildProjectDirectory)\SiteWizard_$(Version)_Install.zip" />
     <Delete Files="$(MSBuildProjectDirectory)\SiteWizard_$(Version)_Source.zip" />

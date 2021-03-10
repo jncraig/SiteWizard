@@ -5,3 +5,8 @@
 /.vs/**
 /bin
 /packages
+/install
+/obj/**
+/Package
+/ResourcesZip
+/Resources.zip
