@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/**
+/bin
+/packages
+/install
+/obj/**
+/Package
+/ResourcesZip
+/Resources.zip
+/Resources.zip.manifest
+/SiteWizard.csproj.user
